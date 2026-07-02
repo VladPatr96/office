@@ -1,0 +1,20 @@
+{
+  "name": "skill-flash",
+  "description": "Company-OS суперскилл для Claude Code: компания агентов в любом репозитории — issue-first конвейер, отделы с чартерами, graphify-граф знаний, найм агентов, ритуалы и токен-экономика.",
+  "owner": {
+    "name": "Vlad Patravaev",
+    "email": "patravaevvlad@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "skill-flash",
+      "source": "./",
+      "description": "Разворачивает «компанию агентов» в любом репозитории (включая пустой): bootstrap репо и GitHub Issues, спеки в телах issues, диспатч указателем, верификация со свежим контекстом, найм отделов под задачу из проверенных скиллов, консилиум для high-stakes развилок, живой статус company/state.md, кросс-проектные уроки и жёсткая токен-экономика (оркестратор думает — дешёвые модели работают).",
+      "version": "0.1.0",
+      "author": {
+        "name": "Vlad Patravaev"
+      },
+      "category": "development"
+    }
+  ]
+}

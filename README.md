@@ -24,13 +24,22 @@
 
 ## Установка
 
+Как плагин (рекомендуется — обновления через `/plugin`):
+
+```
+/plugin marketplace add VladPatr96/skill-flash
+/plugin install skill-flash@skill-flash
+```
+
+Либо вручную, копией в пользовательские скиллы (удобно для разработки самого скилла):
+
 ```powershell
 git clone https://github.com/VladPatr96/skill-flash
 cd skill-flash
 Copy-Item -Recurse -Force skills/skill-flash "$env:USERPROFILE/.claude/skills/skill-flash"
 ```
 
-Скилл станет доступен во всех проектах как `/skill-flash`.
+Ставьте одним способом, не обоими сразу — иначе скилл задвоится. После установки доступен во всех проектах как `/skill-flash`.
 
 Опциональные зависимости: [gh CLI](https://cli.github.com) (обязателен для конвейера), `uv` + graphify (`uv tool install graphifyy`), плагин Codex (`/plugin marketplace add openai/codex-plugin-cc`).
 
@@ -38,6 +47,7 @@ Copy-Item -Recurse -Force skills/skill-flash "$env:USERPROFILE/.claude/skills/sk
 
 | Путь | Что это |
 |------|---------|
+| `.claude-plugin/` | Манифесты плагина и маркетплейса (Claude Code); `.codex-plugin/` — то же для Codex CLI |
 | `skills/skill-flash/SKILL.md` | Регламент суперскилла (источник правды) |
 | `skills/skill-flash/templates/` | Шаблоны: спека issue, чартер отдела, карта компании, живой статус (state.md), консилиум, ритуалы, агенты (deep-reasoner, fast-worker, verifier, generic dept-worker), блок для CLAUDE.md с правилами кода |
 | `skills/skill-flash/registry.md` | Реестр проверенных скиллов для «найма» + как искать новые |
