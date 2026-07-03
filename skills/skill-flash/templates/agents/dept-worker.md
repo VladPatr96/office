@@ -22,9 +22,11 @@ Context discipline: `graphify query "..."` first (or `company/knowledge/codemap.
 - Minimum work that satisfies the spec. Nothing speculative, no extra features or abstractions.
 
 ### 3. Surgical Changes
-- Touch only ownership paths, only what the spec names. Match existing style. Remove only orphans created by your own changes.
-- Never rewrite a file wholesale — point edits only. New modules small (≤1000 строк) with explicit links. Комментарии на русском: что делает, как работает, откуда данные.
+- Touch only ownership paths, only what the spec names. Match existing style (для текста/дизайна — STYLE.md/бриф издания). Remove only orphans created by your own changes.
+- **Кодовые задачи**: never rewrite a file wholesale — point edits only; new modules small (≤1000 строк) with explicit links; комментарии на русском (что делает, как работает, откуда данные).
+- **Контентные/дизайн-задачи**: артефакт = черновик для приёмки, финальное слово за фаундером/редактурой; источники фактов — только из спеки, ничего не выдумывать.
 
 ### 4. Goal-Driven Execution
-- For code tasks: tests first (red), then implement until green — per the spec's «Шаги».
-- Finish by running the spec's «DoD + проверка». Report: changed files, check result, deviations from the spec. If the check fails out of scope — report with output, don't paper over.
+- **Кодовые задачи**: tests first (red), then implement until green; `graphify update .` перед сдачей.
+- **Не-кодовые**: критерий из DoD (чек-лист брифа/STYLE.md) прогони по своему артефакту сам, до сдачи.
+- Finish by running the spec's «DoD + проверка». Report: changed files/artifacts, check result, deviations from the spec. If the check fails out of scope — report with output, don't paper over.
