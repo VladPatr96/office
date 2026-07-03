@@ -16,6 +16,7 @@
 | personal-corp-skills: weekly-retro, weekly-planning, cc-analytics | плагин personal-corp-skills | Недельные ритуалы и аналитика | board |
 | personal-corp-skills: readme-generator, claude-md-writer | плагин personal-corp-skills | Документация проекта | docs |
 | personal-corp-skills: art-director, parallel-design-variants, design-minimal, html-draft | плагин personal-corp-skills | Поиск визуального стиля, варианты дизайна на выбор, минималистичные HTML-страницы, blueprint-схемы | design |
+| personal-corp-skills: tg-bot-ops | плагин personal-corp-skills | Эксплуатация Telegram-ботов: health-чеки, вебхуки/поллинг, деплой, логи, инциденты | publishing/distribution, devops |
 | personal-corp-skills: ceo-council | плагин personal-corp-skills | Мульти-перспективный разбор стратегических решений | board |
 
 ## Найденное на GitHub
