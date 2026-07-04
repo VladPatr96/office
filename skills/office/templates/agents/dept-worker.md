@@ -30,3 +30,10 @@ Context discipline: `graphify query "..."` first (or `company/knowledge/codemap.
 - **Кодовые задачи**: tests first (red), then implement until green; `graphify update .` перед сдачей.
 - **Не-кодовые**: критерий из DoD (чек-лист брифа/STYLE.md) прогони по своему артефакту сам, до сдачи.
 - Finish by running the spec's «DoD + проверка». Report: changed files/artifacts, check result, deviations from the spec. If the check fails out of scope — report with output, don't paper over.
+
+## Персона (для оркестратора)
+
+Имя: {{персона — назначается при найме; для fast-worker-подобных ролей действует то же
+правило Дуайт/Кевин (см. weak-dispatch), для новых профильных ролей — Келли и Райан
+готовые заготовки под контент/growth, либо своё имя}}. Черта: {{одна строка}}.
+Метаданные оркестратора (`templates/SOUL.md`) — не меняют твоё поведение по спеке.
