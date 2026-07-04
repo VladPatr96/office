@@ -1,10 +1,10 @@
-# skill-flash
+# office
 
 Суперскилл для Claude Code: **операционная система компании в соло**. Разворачивает «компанию агентов» в любом репозитории (включая пустой) и ведёт весь бизнес как конвейер — GitHub Issues со спеками, отделы под функции бизнеса (по готовым blueprints), knowledge-граф, планёрки и отчёты, OKR и unit-экономика, жёсткая токен-экономика.
 
 ## Что делает
 
-Одна команда `/skill-flash <цель>`:
+Одна команда `/office <цель>`:
 
 1. **Intake** — короткое grill-me-интервью по нерешённым развилкам (что можно выяснить из репо/веба — выясняет сам).
 2. **Bootstrap** — пустой репозиторий превращается в рабочий: git + GitHub remote, лейблы, `company/` (чартеры отделов, ownership-карта, OKR), агенты ядра в `.claude/agents/`, CLAUDE.md с регламентом. Плюс **штатное интервью по blueprint**: готовые оргпроекты по типу бизнеса (`templates/blueprints/` — media, saas, creator, agency, generic) с отделами, промт-паками, OKR-заготовками и метрик-гейтами; профильные отделы предлагаются офферами сразу с unit-оценкой.
@@ -33,19 +33,19 @@
 Как плагин (рекомендуется — обновления через `/plugin`):
 
 ```
-/plugin marketplace add VladPatr96/skill-flash
-/plugin install skill-flash@skill-flash
+/plugin marketplace add VladPatr96/office
+/plugin install office@office
 ```
 
 Либо вручную, копией в пользовательские скиллы (удобно для разработки самого скилла):
 
 ```powershell
-git clone https://github.com/VladPatr96/skill-flash
-cd skill-flash
+git clone https://github.com/VladPatr96/office
+cd office
 Get-ChildItem skills -Directory | ForEach-Object { Copy-Item -Recurse -Force $_.FullName "$env:USERPROFILE/.claude/skills/$($_.Name)" }
 ```
 
-Ставьте одним способом, не обоими сразу — иначе скилл задвоится. После установки доступен во всех проектах как `/skill-flash`.
+Ставьте одним способом, не обоими сразу — иначе скилл задвоится. После установки доступен во всех проектах как `/office`.
 
 Опциональные зависимости: [gh CLI](https://cli.github.com) (обязателен для конвейера), `uv` + graphify (`uv tool install graphifyy`), плагин Codex (`/plugin marketplace add openai/codex-plugin-cc`).
 
@@ -54,11 +54,11 @@ Get-ChildItem skills -Directory | ForEach-Object { Copy-Item -Recurse -Force $_.
 | Путь | Что это |
 |------|---------|
 | `.claude-plugin/` | Манифесты плагина и маркетплейса (Claude Code); `.codex-plugin/` — то же для Codex CLI |
-| `skills/skill-flash/SKILL.md` | Регламент-роутер (источник правды, худеет по мере выноса кирпичей) |
+| `skills/office/SKILL.md` | Регламент-роутер (источник правды, худеет по мере выноса кирпичей) |
 | `skills/planerka`, `skills/weak-dispatch`, `skills/writing-specs` | **Кирпичи** — маленькие скиллы «одна задача» (философия mattpocock/skills): команды для пользователя + дисциплины для моделей; карта и очередь выноса — `docs/BRICKS.md` |
-| `skills/skill-flash/templates/` | Шаблоны: спека issue, чартер отдела, карта компании, живой статус (state.md), OKR, планёрка, консилиум, ритуалы (weekly + месячный business review), промт-пак ядра (слот-формат Anthropic prompt library), агенты, блок для CLAUDE.md с правилами кода |
-| `skills/skill-flash/templates/blueprints/` | Готовые оргпроекты по типу бизнеса: media, saas, creator, agency, generic — отделы, промт-паки, OKR-заготовки, гейты этапов, первые задачи |
-| `skills/skill-flash/registry.md` | Реестр проверенных скиллов для «найма» + как искать новые |
+| `skills/office/templates/` | Шаблоны: спека issue, чартер отдела, карта компании, живой статус (state.md), OKR, планёрка, консилиум, ритуалы (weekly + месячный business review), промт-пак ядра (слот-формат Anthropic prompt library), агенты, блок для CLAUDE.md с правилами кода |
+| `skills/office/templates/blueprints/` | Готовые оргпроекты по типу бизнеса: media, saas, creator, agency, generic — отделы, промт-паки, OKR-заготовки, гейты этапов, первые задачи |
+| `skills/office/registry.md` | Реестр проверенных скиллов для «найма» + как искать новые |
 
 ## Роли моделей
 

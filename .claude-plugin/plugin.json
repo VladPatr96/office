@@ -1,14 +1,14 @@
 {
-  "name": "skill-flash",
-  "description": "Company-OS суперскилл: компания агентов в любом репозитории — issue-first конвейер, отделы, graphify-граф, найм, ритуалы, токен-экономика",
+  "name": "office",
+  "description": "Office — операционная система компании агентов: issue-first конвейер, отделы, найм, ритуалы, токен-экономика. Одна команда /office — от автоматизации рутины до компании под ключ",
   "version": "0.5.0",
   "author": {
     "name": "Vlad Patravaev",
     "email": "patravaevvlad@gmail.com",
     "url": "https://github.com/VladPatr96"
   },
-  "homepage": "https://github.com/VladPatr96/skill-flash",
-  "repository": "https://github.com/VladPatr96/skill-flash",
+  "homepage": "https://github.com/VladPatr96/office",
+  "repository": "https://github.com/VladPatr96/office",
   "license": "MIT",
   "keywords": ["company-os", "ai-agents", "orchestration", "issue-first", "multi-agent", "token-economy", "graphify", "knowledge-graph", "departments", "agent-hiring", "consilium", "tdd", "living-docs", "claude-code", "skills"]
 }

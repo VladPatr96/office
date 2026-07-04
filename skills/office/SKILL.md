@@ -1,6 +1,6 @@
 ---
-name: skill-flash
-description: Company-OS суперскилл — разворачивает «компанию агентов» в любом репозитории (включая пустой) и ведёт работу как конвейер. Use when user says "/skill-flash", "разверни компанию", "настрой проект как компанию агентов", or hands a project goal that should be executed by an agent company — repo bootstrap, GitHub Issues pipeline, graphify knowledge graph, departments with narrow agents, hiring, meetings, reports, token economy.
+name: office
+description: Company-OS суперскилл — разворачивает «компанию агентов» в любом репозитории (включая пустой) и ведёт работу как конвейер. Use when user says "/office", "разверни компанию", "настрой проект как компанию агентов", or hands a project goal that should be executed by an agent company — repo bootstrap, GitHub Issues pipeline, graphify knowledge graph, departments with narrow agents, hiring, meetings, reports, token economy.
 ---
 
 # Skill Flash — операционная система «компании агентов»
@@ -104,7 +104,7 @@ description: Company-OS суперскилл — разворачивает «к
 - **Планёрка** — первый ритуал каждой сессии: кирпич-команда **planerka** (факты → ≤5 решений с рекомендациями → что поедет дальше; протокол в `company/meetings/`, state.md обновлён, шаблон в `templates/planerka.md`).
 - **Kickoff эпика** — перед первым диспатчем его задач: протокол `company/meetings/YYYY-MM-DD-kickoff-<epic>.md` (шаблон в `templates/rituals.md`): цель, состав отделов, план спек, риски.
 - **Приёмка задачи** — не собрание: closing-коммент issue.
-- **Ретро эпика** — после финального ревью: `...-retro-<epic>.md`; улучшения регламента превращаются в issue на правку CLAUDE.md/чартеров. Переносимые уроки — в `company/knowledge/lessons.md`; универсальные (пригодятся в других проектах) — дописать в глобальную базу `~/.claude/skills/skill-flash/lessons.md` (формат: `дата — проект — урок одной строкой`). При Intake нового проекта эту базу прочитать.
+- **Ретро эпика** — после финального ревью: `...-retro-<epic>.md`; улучшения регламента превращаются в issue на правку CLAUDE.md/чартеров. Переносимые уроки — в `company/knowledge/lessons.md`; универсальные (пригодятся в других проектах) — дописать в глобальную базу `~/.claude/skills/office/lessons.md` (формат: `дата — проект — урок одной строкой`). При Intake нового проекта эту базу прочитать.
 
 Календарные (в начале недели или по запросу):
 - weekly-ретро и план (если установлены скиллы weekly-retro/weekly-planning — использовать их) → отчёт `company/reports/YYYY-Www.md` по шаблону: сделано (issues + SHA), в работе, blocked, расход лимитов и сверка unit-оценок офферов, роутинг (кто проваливал верификацию — какие роли/модели скорректировать), OKR-прогресс, решения с «почему», план.

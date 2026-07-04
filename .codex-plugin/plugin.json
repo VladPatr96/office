@@ -1,14 +1,14 @@
 {
-  "name": "skill-flash",
+  "name": "office",
   "version": "0.5.0",
-  "description": "Company-OS super skill: an agent company in any repository — issue-first pipeline, departments, knowledge graph, agent hiring, rituals, token economy",
+  "description": "Office — операционная система компании агентов: issue-first конвейер, отделы, найм, ритуалы, токен-экономика. Одна команда /office — от автоматизации рутины до компании под ключ",
   "author": {
     "name": "Vlad Patravaev",
     "email": "patravaevvlad@gmail.com",
     "url": "https://github.com/VladPatr96"
   },
-  "homepage": "https://github.com/VladPatr96/skill-flash",
-  "repository": "https://github.com/VladPatr96/skill-flash",
+  "homepage": "https://github.com/VladPatr96/office",
+  "repository": "https://github.com/VladPatr96/office",
   "license": "MIT",
   "keywords": [
     "company-os",
@@ -34,11 +34,11 @@
       "Workflow Automation",
       "Multi-Agent Orchestration"
     ],
-    "websiteURL": "https://github.com/VladPatr96/skill-flash",
-    "termsOfServiceURL": "https://github.com/VladPatr96/skill-flash/blob/main/LICENSE",
+    "websiteURL": "https://github.com/VladPatr96/office",
+    "termsOfServiceURL": "https://github.com/VladPatr96/office/blob/main/LICENSE",
     "brandColor": "#F59E0B",
     "defaultPrompt": [
-      "/skill-flash Цель: разверни компанию в этом репозитории",
+      "/office Цель: разверни компанию в этом репозитории",
       "Настрой проект как компанию агентов",
       "Разверни компанию и заведи первый эпик"
     ]
