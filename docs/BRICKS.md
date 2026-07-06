@@ -6,6 +6,7 @@
 
 | Стадия | Кирпичи-команды (пользователь) | Кирпичи-дисциплины (модель) | Статус |
 |--------|-------------------------------|------------------------------|--------|
+| **Вход: разовая задача** | /solve (S/M/L triage, файл-спека `.office/tasks/`, границы возможного) | verifying | спека #6 (v0.6.0) |
 | **Идея / выравнивание** | /company-start (Intake+bootstrap), grill-me (уже есть у пользователя) | blueprint-подбор | в монолите |
 | **Оргпроект** | /hire (штатное интервью, офферы) | — | в монолите |
 | **Производство** | /to-spec (задача → спека-issue) | **writing-specs** ✅, **weak-dispatch** ✅, tdd-gate, verifying | первые вынесены |
@@ -26,7 +27,8 @@
 ## Порядок выноса (по ценности)
 
 1. ✅ planerka (команда), weak-dispatch (дисциплина), writing-specs (дисциплина) — v0.5.0
-2. triage + diagnosing-bugs (стадия сопровождения — сейчас не покрыта вовсе)
-3. to-spec, hire, company-status (команды из монолита)
-4. verifying, consilium, lessons-log, context-vocab
-5. ship-gate, metrics-watch
+2. /solve (команда) + verifying (дисциплина) — v0.6.0, вертикальный срез универсального входа + носитель-абстракция writing-specs/weak-dispatch (спека: issue #6)
+3. triage + diagnosing-bugs (v0.7 — стадия сопровождения, сейчас не покрыта вовсе)
+4. to-spec, hire, company-status (команды из монолита)
+5. consilium, lessons-log, context-vocab
+6. ship-gate, metrics-watch
