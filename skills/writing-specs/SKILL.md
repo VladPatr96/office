@@ -1,13 +1,13 @@
 ---
 name: writing-specs
-description: Use WHENEVER writing or rewriting an issue body before dispatch (office issue-first pipeline), or when an executor asked a question / did unplanned exploration (symptom of a weak spec) — дисциплина написания самодостаточной спеки в тело issue: исполнитель работает без разведки и вопросов.
+description: Use WHENEVER writing or rewriting a spec (issue body or file spec) before dispatch (office issue-first pipeline), or when an executor asked a question / did unplanned exploration (symptom of a weak spec) — дисциплина написания самодостаточной спеки — в тело issue (office) или файл-спеку .office/tasks/ (/solve): исполнитель работает без разведки и вопросов.
 ---
 
 # Writing-specs: спека, снимающая мышление
 
 Спека — единственный документ задачи. Исполнитель должен сделать работу, **не открыв ни одного файла «на разведку» и не задав ни одного вопроса**. Не прошло этот тест — спека не готова, диспатч запрещён.
 
-## Структура (тело issue переписывается целиком: `gh issue edit N --body`)
+## Структура (носитель: тело issue — `gh issue edit N --body` — или файл `.office/tasks/<slug>.md`; переписывается целиком)
 
 1. **Цель** — одно предложение: что видит пользователь после мержа. Исходная формулировка задачи растворяется здесь.
 2. **Контекст** — файлы и строки, контракты, ловушки (дубли, генерённое). Источник — `graphify query` и отчёты скаутов, не память. Для weak-исполнителей — вырезки кода прямо сюда (см. дисциплину weak-dispatch).
@@ -23,6 +23,6 @@ description: Use WHENEVER writing or rewriting an issue body before dispatch (of
 - [ ] Все развилки решены и записаны (ни одного «на усмотрение исполнителя»)?
 - [ ] DoD исполним одной командой/сценарием (verifier не должен ничего изобретать)?
 - [ ] Дифф-бюджет реалистичен (для weak: один файл, ≤40 строк — иначе дробить)?
-- [ ] Лейбл `status:spec-ready` поставлен?
+- [ ] Статус выставлен: лейбл `status:spec-ready` (issue) или `status: spec-ready` во frontmatter (файл)?
 
 Симптом на будущее: исполнитель задал вопрос или полез исследовать → это дефект СПЕКИ, не исполнителя. На ретро — правка этой дисциплины.
