@@ -1,2 +1,0 @@
-description = "Use when the user says \"/corporate\" or asks for a monthly business review, board report, OKR review, or unit-economics summary."
-prompt = "Use the Office skill at ../../skills/corporate/SKILL.md. Load it before responding and follow its procedure."

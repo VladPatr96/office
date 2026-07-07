@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT="${1:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
 
-mkdir -p "$ROOT/.claude/skills" "$ROOT/.codex/skills" "$ROOT/.opencode/skills" "$ROOT/.gemini/commands"
+mkdir -p "$ROOT/.claude/skills" "$ROOT/.codex/skills" "$ROOT/.opencode/skills"
 
 count=0
 for skill in "$ROOT"/skills/*; do
@@ -14,11 +14,6 @@ for skill in "$ROOT"/skills/*; do
   cp -R "$skill"/. "$ROOT/.claude/skills/$name/"
   cp -R "$skill"/. "$ROOT/.codex/skills/$name/"
   cp -R "$skill"/. "$ROOT/.opencode/skills/$name/"
-  desc="$(awk '/^description:/ { sub(/^description:[[:space:]]*/, ""); print; exit }' "$skill/SKILL.md" | sed 's/"/\\"/g')"
-  cat > "$ROOT/.gemini/commands/$name.toml" <<EOF
-description = "$desc"
-prompt = "Use the Office skill at ../../skills/$name/SKILL.md. Load it before responding and follow its procedure."
-EOF
   count=$((count + 1))
 done
 
@@ -35,4 +30,4 @@ This repository uses Office.
 - Handoff shape: goal, status, files changed, commands run, decisions, risks, exact next step.
 EOF
 
-echo "Synced $count skills into Claude, Codex, OpenCode, Gemini, and AGENTS.md layouts."
+echo "Synced $count skills into Claude, Codex, OpenCode, and AGENTS.md layouts."

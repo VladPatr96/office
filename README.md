@@ -17,6 +17,8 @@ The canonical language of this repository is English. Russian docs live under `r
 |-------|---------------|------------|
 | `skill-craft` | Meta-discipline for writing, editing, and pruning short predictable office skills. | run skill-craft over a skill draft before merging it |
 | `done-check` | Pre-"done" self-check: every claim backed by evidence from this session. | fires before any completion claim, or say "run done-check" |
+| `recon` | First 10 minutes in an unfamiliar project: pulse, strict-order reading, five-line map, task zone. | fires on entering a new repo, or say "recon this project" |
+| `unstuck` | Escape ladder for dead ends. | fires itself after the third failed attempt, or say "I'm stuck" |
 
 ## What Office Adds
 
@@ -99,7 +101,7 @@ Distribution artifacts are generated from canonical `skills/`:
 | `ru/` | Russian mirror of README, docs, and skill docs |
 | `docs/` | Method, ADRs, distribution notes, traceability |
 | `.claude-plugin/`, `.codex-plugin/` | Plugin manifests |
-| `.claude/`, `.codex/`, `.gemini/`, `.opencode/` | Generated or compatibility layouts |
+| `.claude/`, `.codex/`, `.opencode/` | Generated or compatibility layouts (Antigravity CLI consumes the Claude plugin layout as-is) |
 | `scripts/` | Layout sync scripts |
 
 ## Model Routing
@@ -118,3 +120,7 @@ Resolve concrete model names from the active tool at runtime.
 ## License And Attribution
 
 MIT. The compact-skill style is adapted with attribution to Matt Pocock's `skills` project and related small-skill practices; Office text and procedures are original.
+
+## Docs
+
+- [ADR-0001: English canon, ru/ mirror, 50-line skill format](docs/adr/0001-en-canon-ru-mirror-skill-format.md)

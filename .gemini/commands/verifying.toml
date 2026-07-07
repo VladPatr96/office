@@ -1,2 +1,0 @@
-description = "Use whenever accepting completed work from an executor, especially after code/docs changed, after a failed retry, or when the same context is tempted to self-review."
-prompt = "Use the Office skill at ../../skills/verifying/SKILL.md. Load it before responding and follow its procedure."

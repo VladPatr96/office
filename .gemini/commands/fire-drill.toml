@@ -1,2 +1,0 @@
-description = "Use when the user says \"/fire-drill\", reports an incident, regression, outage, anomaly, or repeated verification failure."
-prompt = "Use the Office skill at ../../skills/fire-drill/SKILL.md. Load it before responding and follow its procedure."

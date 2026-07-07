@@ -1,27 +1,22 @@
 ---
 name: recon
-description: Use before writing a spec when facts are missing, the codebase area is unknown, external behavior is unclear, or the next step depends on current evidence.
+description: Use when entering an unfamiliar repo or folder, starting work in a new project, or asked "what is this project"; first 10 minutes build a map sufficient for the task — pulse, strict-order reading, five-line map, task zone.
 ---
 
 # Recon
 
-Gather just enough facts to write a self-contained spec.
+The goal of the first 10 minutes is not "understand the project" but a map sufficient for the concrete task.
 
-## Rules
+## Steps
 
-1. Start with the question to answer.
-2. Prefer indexes, search, existing docs, and narrow reads over broad file dumps.
-3. Record file paths, commands, URLs, and dates for volatile facts.
-4. Separate observed facts from inferences.
-5. Stop when the spec can be written; do not solve during recon.
+1. **Pulse** — commands, not eyes: `git log --oneline -15` (alive? the last changes are where the life is), `git status` (uncommitted = someone's unfinished work: leave it in place and report it, never revert silently), `ls` (language, structure, manifests).
+2. **Read in strict order**, the first existing file at each rung: charter (CLAUDE.md / AGENTS.md / GEMINI.md — local rules override your habits) -> README -> manifest (package.json scripts / pyproject / psd1) -> tests/ (names show what matters) -> CI (.github/workflows — which checks are mandatory).
+3. **Five-line map**, written down in the reply or journal: What it does / Entry / Run (exact command) / Verify (exact command) / Danger (secrets, prod, frozen zones). A line you cannot fill is your first task; changes start after Verify and Danger are filled.
+4. **Task zone** instead of the whole codebase: 2-3 words from the task wording -> grep -> 1-2 files around the matches -> their imports. Read the task zone only; reading the project "just in case" burns context.
 
-## Output
+## Exit checklist
 
-Return:
-
-- question answered;
-- facts with evidence;
-- unknowns that remain;
-- recommended next skill (`writing-specs`, `reproduce`, `grill-me`, or `consilium`).
-
-If current external data matters, verify it from primary sources.
+- Pulse commands executed and their output read.
+- Reading order followed without skips or reordering.
+- Five-line map written down; Verify and Danger filled before any change.
+- Task zone named: matched files and their imports listed.
