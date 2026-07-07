@@ -1,0 +1,2 @@
+﻿description = "Use when progress is blocked by user-only knowledge and the agent has already gathered everything it can from repo, tools, or primary sources."
+prompt = "Use the Office skill at ../../skills/grill-me/SKILL.md. Load it before responding and follow its procedure."

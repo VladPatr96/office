@@ -1,7 +1,7 @@
 {
   "name": "office",
-  "description": "Office — операционная система компании агентов: issue-first конвейер, отделы, найм, ритуалы, токен-экономика. Одна команда /office — от автоматизации рутины до компании под ключ. Разовые задачи — команда /solve без бутстрапа компании.",
-  "version": "0.6.0",
+  "description": "Office is a curated company operating system for coding agents: issue-first specs, departments, fresh-context verification, lessons, and multi-CLI layouts. One-off work uses /solve without company bootstrap.",
+  "version": "1.0.0",
   "author": {
     "name": "Vlad Patravaev",
     "email": "patravaevvlad@gmail.com",
@@ -10,5 +10,14 @@
   "homepage": "https://github.com/VladPatr96/office",
   "repository": "https://github.com/VladPatr96/office",
   "license": "MIT",
-  "keywords": ["company-os", "ai-agents", "orchestration", "issue-first", "multi-agent", "token-economy", "graphify", "knowledge-graph", "departments", "agent-hiring", "consilium", "tdd", "living-docs", "claude-code", "skills"]
+  "keywords": [
+    "company-os",
+    "ai-agents",
+    "orchestration",
+    "issue-first",
+    "verification",
+    "multi-agent",
+    "multi-cli",
+    "skills"
+  ]
 }

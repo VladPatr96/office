@@ -1,0 +1,2 @@
+﻿description = "Use before closing an issue, marking a file spec done, publishing a deliverable, or telling the user a task is complete."
+prompt = "Use the Office skill at ../../skills/done-check/SKILL.md. Load it before responding and follow its procedure."

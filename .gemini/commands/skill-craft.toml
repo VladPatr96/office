@@ -1,0 +1,2 @@
+﻿description = "Use when creating or revising an Office skill, especially after observing a repeated agent shortcut, vague trigger, bloated SKILL.md, or missing Russian mirror."
+prompt = "Use the Office skill at ../../skills/skill-craft/SKILL.md. Load it before responding and follow its procedure."

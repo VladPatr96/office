@@ -1,0 +1,2 @@
+﻿description = "Use whenever writing or rewriting an issue body or file spec before dispatch, or when an executor asked questions, explored unexpectedly, or changed scope."
+prompt = "Use the Office skill at ../../skills/writing-specs/SKILL.md. Load it before responding and follow its procedure."

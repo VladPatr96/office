@@ -1,0 +1,2 @@
+﻿description = "Use before risky implementation, migration, release, external action, or tool adoption when failure would be expensive or hard to reverse."
+prompt = "Use the Office skill at ../../skills/premortem/SKILL.md. Load it before responding and follow its procedure."

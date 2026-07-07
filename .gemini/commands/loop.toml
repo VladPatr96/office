@@ -1,0 +1,2 @@
+﻿description = "Use when running an iterative agent workflow that needs bounded retries, verifier gates, memory writes, and an explicit stop condition."
+prompt = "Use the Office skill at ../../skills/loop/SKILL.md. Load it before responding and follow its procedure."

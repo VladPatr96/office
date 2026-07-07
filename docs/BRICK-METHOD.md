@@ -1,40 +1,41 @@
-# BRICK-METHOD
+# Brick Method
 
-Методология создания кирпичей (skills). Источник паттернов — obra/superpowers (MIT), идеи переносятся своими словами.
+Use this method when creating or revising any Office skill.
 
-## Зачем
+## Red -> Green -> Refactor
 
-Кирпич — не теоретическое best practice, а заплатка под зафиксированный провал: без него baseline-агент срезает угол, с ним — нет. Кирпичи, написанные «из головы», раздувают контекст и не меняют поведение модели. description — это триггерная поверхность кирпича: он решает, включится ли кирпич вообще в нужный момент, до того как модель увидит тело.
+1. **Red.** Run or reconstruct 2-3 stress cases where the baseline agent cuts corners. Capture exact failure symptoms, not vague opinions.
+2. **Green.** Write the smallest skill that blocks those exact shortcuts.
+3. **Refactor.** Re-run the same cases. If the agent finds a new shortcut, patch that shortcut only.
 
-## RED-GREEN-REFACTOR
+## CSO Description Rule
 
-1. **RED.** Прогнать baseline-агента (без кирпича) на 2–3 стресс-сценария, дословно зафиксировать, как он срезает углы: какие рационализации использует, какие шаги пропускает, где домысливает вместо того чтобы спросить или проверить. DoD фазы: есть дословные цитаты провалов агента по каждому сценарию, а не пересказ «агент делает плохо».
-2. **GREEN.** Написать минимальный кирпич, закрывающий именно зафиксированные обходы — не гипотетические, а те, что реально были в RED. DoD фазы: тот же baseline-агент с кирпичем проходит все стресс-сценарии из RED без ранее зафиксированных срезаний углов.
-3. **REFACTOR.** Искать новые обходы (агент находит другой способ срезать угол в рамках того же кирпича), затыкать их точечно, повторять цикл. DoD фазы: новый прогон стресс-сценариев не находит новых обходов; кирпич не раздулся сверх необходимого для закрытия найденных дыр.
+`description` is trigger surface only: Context, Symptoms, Occasion. Do not summarize the workflow there, because weaker models may execute the summary and skip the body.
 
-## CSO-правило description
+Good:
 
-CSO — description отвечает ТОЛЬКО на вопрос «когда включать» (Context / Symptoms / Occasion: триггеры, симптомы, ключевые фразы пользователя) и НИКОГДА не пересказывает шаги процесса. Если description резюмирует workflow, модель исполняет по этому summary и не читает тело кирпича — для дешёвых моделей это главный путь деградации: они получают кривой пересказ вместо выверенной процедуры.
+```yaml
+description: Use WHENEVER accepting completed work from an executor, especially after code or docs changed and the same agent is tempted to self-review.
+```
 
-Пример на `writing-specs`:
+Bad:
 
-- **Плохой** (пересказ процесса): «Пишет спеку в issue по структуре Цель/Контекст/Влияние/Развилки/Шаги/Границы/DoD, проверяет самодостаточность и ставит лейбл status:spec-ready». Это шаги, а не триггер — модель может решить, что уже поняла суть, и не открыть тело кирпича.
-- **Хороший** (только триггеры): «Use WHENEVER writing or rewriting an issue body before dispatch (office issue-first pipeline), or when an executor asked a question / did unplanned exploration (symptom of a weak spec) — дисциплина написания самодостаточной спеки в тело issue: исполнитель работает без разведки и вопросов». Здесь — когда включать, а не что делать внутри.
+```yaml
+description: Runs tests, checks docs, compares the diff, and returns PASS or FAIL.
+```
 
-## Валидация против anthropics/skills
+## Skill DoD
 
-Чек-лист (спецификация: https://github.com/anthropics/skills, каталог `spec/`; если сеть недоступна — использовать чек-лист как есть, не ходить в веб):
+- `name` is kebab-case.
+- `description` is <=1024 characters and trigger-only.
+- `SKILL.md` target is <=50 lines.
+- The skill has one job and one clear output.
+- Heavy mechanics live in adjacent templates/docs.
+- Russian mirror is updated in `ru/skills/<name>.md`.
 
-- [ ] Frontmatter содержит `name` в kebab-case.
-- [ ] Frontmatter содержит `description` ≤ 1024 символов.
-- [ ] Тяжёлая механика (скрипты, длинные шаблоны, справочные данные) вынесена в отдельные файлы рядом со SKILL.md — прогрессивная подгрузка, а не в тело SKILL.md.
-- [ ] SKILL.md остаётся компактным и читается как процедура, а не как склад данных.
+## Verification Notes
 
-## DoD нового кирпича
+Fresh-context verification is a context-isolation pattern: the verifier sees the spec and artifacts, not the maker's rationalizations. This aligns with Lance Martin's context engineering taxonomy and Anthropic's public note that automated code review would have caught roughly a third of past incident bugs:
 
-- [ ] SKILL.md ≤ ~100 строк.
-- [ ] Одна задача на кирпич — не смешаны несколько несвязанных дисциплин.
-- [ ] Кирпич самодостаточен — не требует чтения других кирпичей для исполнения своей процедуры.
-- [ ] RED-протокол (дословные провалы baseline-агента) приложен к issue, заводящему кирпич.
-- [ ] `description` прошёл CSO-правило (см. секцию выше).
-- [ ] Соблюдена спецификация anthropics/skills (см. секцию «Валидация» выше).
+- https://rlancemartin.github.io/2025/06/23/context_engineering/
+- https://www.anthropic.com/institute/recursive-self-improvement
