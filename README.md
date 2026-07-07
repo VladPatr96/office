@@ -7,6 +7,12 @@
 - **`/solve <задача>`** — разовая задача любого домена в любой папке: triage S/M/L, файл-спека `.office/tasks/`, конвейер исполнитель → верификатор, без бутстрапа и без GitHub.
 - **`/office <цель>`** — постоянный бизнес-конвейер (компания агентов).
 
+## Universal skills
+
+| Skill | What it's for | How to use |
+|-------|---------------|------------|
+| `skill-craft` | Meta-discipline for writing, editing, and pruning short predictable office skills. | run skill-craft over a skill draft before merging it |
+
 ## Что делает /office
 
 Одна команда `/office <цель>`:
