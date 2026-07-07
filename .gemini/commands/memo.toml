@@ -1,2 +1,0 @@
-description = "Use when the user says \"/memo\" or asks to turn a task, bug, idea, or request into an Office issue spec before dispatch."
-prompt = "Use the Office skill at ../../skills/memo/SKILL.md. Load it before responding and follow its procedure."

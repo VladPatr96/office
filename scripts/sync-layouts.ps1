@@ -20,28 +20,15 @@ function Copy-Skill([System.IO.DirectoryInfo]$Skill, [string]$TargetRoot) {
 $claudeSkills = Join-Path $rootPath ".claude\skills"
 $codexSkills = Join-Path $rootPath ".codex\skills"
 $opencodeSkills = Join-Path $rootPath ".opencode\skills"
-$geminiCommands = Join-Path $rootPath ".gemini\commands"
 
 Ensure-Dir $claudeSkills
 Ensure-Dir $codexSkills
 Ensure-Dir $opencodeSkills
-Ensure-Dir $geminiCommands
 
 foreach ($skill in $skillDirs) {
   Copy-Skill $skill $claudeSkills
   Copy-Skill $skill $codexSkills
   Copy-Skill $skill $opencodeSkills
-
-  $content = Get-Content -Raw (Join-Path $skill.FullName "SKILL.md")
-  $description = ""
-  if ($content -match "(?ms)^---\s*.*?description:\s*(.+?)\r?\n.*?---") {
-    $description = $Matches[1].Trim().Replace('"', '\"')
-  }
-  $toml = @"
-description = "$description"
-prompt = "Use the Office skill at ../../skills/$($skill.Name)/SKILL.md. Load it before responding and follow its procedure."
-"@
-  Set-Content -NoNewline -Encoding UTF8 -Path (Join-Path $geminiCommands "$($skill.Name).toml") -Value $toml
 }
 
 $agents = @"
@@ -58,4 +45,4 @@ This repository uses Office.
 "@
 Set-Content -NoNewline -Encoding UTF8 -Path (Join-Path $rootPath "AGENTS.md") -Value $agents
 
-Write-Host "Synced $($skillDirs.Count) skills into Claude, Codex, OpenCode, Gemini, and AGENTS.md layouts."
+Write-Host "Synced $($skillDirs.Count) skills into Claude, Codex, OpenCode, and AGENTS.md layouts."

@@ -1,2 +1,0 @@
-description = "Use when writing a skill, editing a skill, skill too long, or pruning a skill; tight discipline for model-invoked office skills that stay predictable, short, and behavior-changing."
-prompt = "Use the Office skill at ../../skills/skill-craft/SKILL.md. Load it before responding and follow its procedure."

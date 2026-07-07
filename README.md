@@ -98,7 +98,7 @@ Distribution artifacts are generated from canonical `skills/`:
 | `ru/` | Russian mirror of README, docs, and skill docs |
 | `docs/` | Method, ADRs, distribution notes, traceability |
 | `.claude-plugin/`, `.codex-plugin/` | Plugin manifests |
-| `.claude/`, `.codex/`, `.gemini/`, `.opencode/` | Generated or compatibility layouts |
+| `.claude/`, `.codex/`, `.opencode/` | Generated or compatibility layouts (Antigravity CLI consumes the Claude plugin layout as-is) |
 | `scripts/` | Layout sync scripts |
 
 ## Model Routing
