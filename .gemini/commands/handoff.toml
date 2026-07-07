@@ -1,0 +1,2 @@
+description = "Use when transferring work to another agent, CLI, worktree, human, or future session; also use before context compaction or stopping mid-task."
+prompt = "Use the Office skill at ../../skills/handoff/SKILL.md. Load it before responding and follow its procedure."

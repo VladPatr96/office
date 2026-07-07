@@ -1,0 +1,2 @@
+description = "Use before writing a spec when facts are missing, the codebase area is unknown, external behavior is unclear, or the next step depends on current evidence."
+prompt = "Use the Office skill at ../../skills/recon/SKILL.md. Load it before responding and follow its procedure."

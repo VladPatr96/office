@@ -1,0 +1,2 @@
+description = "Use when the user says \"/greenlight\" or an action goes outside the repo: publishing, deploy, email, spending, global install, remote creation, upload, or irreversible mutation."
+prompt = "Use the Office skill at ../../skills/greenlight/SKILL.md. Load it before responding and follow its procedure."

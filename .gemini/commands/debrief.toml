@@ -1,0 +1,2 @@
+description = "Use when the user says \"/debrief\", asks for weekly or epic retro, or an epic, incident, or workstream closes."
+prompt = "Use the Office skill at ../../skills/debrief/SKILL.md. Load it before responding and follow its procedure."

@@ -1,0 +1,2 @@
+description = "Use whenever dispatching work to a cheap, local, unreliable, or narrow executor; also use after any executor fails verification because it improvised or exceeded scope."
+prompt = "Use the Office skill at ../../skills/weak-dispatch/SKILL.md. Load it before responding and follow its procedure."

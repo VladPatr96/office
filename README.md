@@ -1,11 +1,15 @@
-# office
+# Office
 
-Суперскилл для Claude Code: **операционная система компании в соло**. Разворачивает «компанию агентов» в любом репозитории (включая пустой) и ведёт весь бизнес как конвейер — GitHub Issues со спеками, отделы под функции бизнеса (по готовым blueprints), knowledge-граф, планёрки и отчёты, OKR и unit-экономика, жёсткая токен-экономика. Разовые задачи решает лёгкий вход /solve — без развёртывания компании.
+Office is a curated company operating system for coding agents. It turns a loose project into an issue-first pipeline with departments, self-contained specs, fresh-context verification, lessons, and install layouts for multiple CLIs.
 
-## Два входа
+The canonical language of this repository is English. Russian docs live under `ru/` and must be updated in the same PR as the English source.
 
-- **`/solve <задача>`** — разовая задача любого домена в любой папке: triage S/M/L, файл-спека `.office/tasks/`, конвейер исполнитель → верификатор, без бутстрапа и без GitHub.
-- **`/office <цель>`** — постоянный бизнес-конвейер (компания агентов).
+## Two Entrypoints
+
+| Entrypoint | Use it for | Output |
+|---|---|---|
+| `/solve <task>` | One-off work that does not need a standing company | A bounded task spec, execution, and verification |
+| `/office <goal>` | Ongoing product/business work | Repo bootstrap, GitHub issue pipeline, departments, rituals, and lessons |
 
 ## Universal skills
 
@@ -13,74 +17,103 @@
 |-------|---------------|------------|
 | `skill-craft` | Meta-discipline for writing, editing, and pruning short predictable office skills. | run skill-craft over a skill draft before merging it |
 
-## Что делает /office
+## What Office Adds
 
-Одна команда `/office <цель>`:
+- **Issue-first execution.** Work starts as a self-contained issue or file spec, not a vague chat instruction.
+- **Verifier acceptance.** The maker is never the grader; a fresh-context verifier checks evidence against the spec.
+- **Weak-dispatch discipline.** Cheap/local models get atomic tasks, context packs, machine gates, and retry rules.
+- **Departments.** Agents are organized by business function, not by "everything is engineering".
+- **Curated skills, not skill hoarding.** Office keeps a small set of high-leverage skills and a registry for hiring more.
+- **Living lessons.** Failures become reusable lessons: symptom -> wrong instinct -> correct move.
 
-1. **Intake** — короткое grill-me-интервью по нерешённым развилкам (что можно выяснить из репо/веба — выясняет сам).
-2. **Bootstrap** — пустой репозиторий превращается в рабочий: git + GitHub remote, лейблы, `company/` (чартеры отделов, ownership-карта, OKR), агенты ядра в `.claude/agents/`, CLAUDE.md с регламентом. Плюс **штатное интервью по blueprint**: готовые оргпроекты по типу бизнеса (`templates/blueprints/` — media, saas, creator, agency, generic) с отделами, промт-паками, OKR-заготовками и метрик-гейтами; профильные отделы предлагаются офферами сразу с unit-оценкой.
-3. **Граф знаний** — [graphify](https://github.com/safishamsi/graphify): агенты берут контекст из `graphify query`, а не чтением файлов (главная экономия токенов).
-4. **Конвейер** — issue-first: спека в теле issue → диспатч указателем → верификатор со свежим контекстом → приёмка. Оркестратор не пишет код и не читает базу сам.
-5. **Найм и инструменты** — отделы и агенты не выдумываются: под задачу ищется практический юзкейс и существующие скиллы (реестр + awesome-списки + поиск), пользователю показывается оффер. Рутина ≥3 раз → скрипт/скилл для агентов (`type:tooling`).
-6. **Ритуалы** — kickoff/ретро эпиков в `company/meetings/`, недельные отчёты в `company/reports/`; для high-stakes развилок — консилиум (независимые анонимизированные мнения → синтез).
-7. **Усилитель слабых моделей** — `executor-profile: weak`: атомарные спеки (один файл, ≤40 строк диффа) с контекст-пакетом внутри, машинные гейты до верификации, best-of-N в ворктри, диагност между провалами. Дешёвые модели (Haiku-класс) проходят verifier как топовые — регламент выносит «мышление» из модели в процесс.
+## Skill Catalog
 
-## Принципы
+| Skill | What it is for | How to use | Example phrase |
+|---|---|---|---|
+| `office` | Standing company pipeline | Start or run a company-OS workflow | `/office build a SaaS MVP` |
+| `solve` | One-off task intake | Triage S/M/L and execute without company bootstrap | `/solve fix the README install steps` |
+| `skill-craft` | Writing compact skills | Create or revise a skill by failure-driven design | `write a skill for flaky deploy triage` |
+| `writing-specs` | Self-contained specs | Before dispatching an issue/file task | `turn this bug into a spec` |
+| `memo` | Raw request to issue spec | Create a ready GitHub issue with metadata | `/memo add billing export` |
+| `verifying` | Acceptance discipline | Check work with fresh context and evidence | `verify the completed task` |
+| `weak-dispatch` | Cheap/local executor routing | Dispatch a small task to a weak model safely | `send this to a cheap executor` |
+| `planerka` | Founder standup | Batch decisions and unblock the pipeline | `/planerka` |
+| `corporate` | Business review | Produce OKR, economics, and pipeline report | `/corporate monthly review` |
+| `debrief` | Retro and learning closeout | Close epic/weekly/incident loops | `/debrief issue 12` |
+| `fire-drill` | Incident protocol | Diagnose incidents before mutation | `/fire-drill checkout is down` |
+| `greenlight` | External action gate | Verify, narrow options, and require approval | `/greenlight deploy production` |
+| `casting` | Hiring tool/agent/department | Make a concrete hiring offer | `/casting need design QA` |
+| `unstuck` | Recover from loops | Diagnose a stuck task and choose the next move | `I am stuck on this failing test` |
+| `done-check` | Final readiness check | Decide whether work is actually complete | `is this ready to close?` |
+| `recon` | Bounded investigation | Collect facts before writing a spec | `recon this payment bug` |
+| `handoff` | Transfer work | Package context for another CLI/agent/human | `handoff this issue to Codex` |
+| `next-step` | Reduce ambiguity | Pick the smallest useful next action | `what is the next step?` |
+| `reproduce` | Bug reproduction | Create a reliable repro before fixing | `reproduce this crash` |
+| `frame` | Problem framing | Convert vague goals into decision-ready scope | `frame this feature request` |
+| `premortem` | Risk scan | Find likely failure modes before execution | `premortem this migration` |
+| `lesson` | Lessons log | Record confirmed failure patterns | `write a lesson from this bug` |
+| `grill-me` | Focused interview | Ask only unresolved blocking questions | `grill me before writing the spec` |
+| `loop` | Bounded agent loop | Run trigger -> execute -> verify -> learn cycles | `run a loop on this issue` |
+| `consilium` | Independent opinions | Get 2-4 isolated perspectives for high-stakes choices | `run a consilium on the architecture` |
+| `design-stack` | Design tooling offers | Offer Open Design / Stitch-style design help with consent | `hire design-stack for this UI` |
 
-1. **Простота побеждает** — сначала самое простое и дешёвое работающее решение; доработка отдельными issue по фактам использования.
-2. **Агенту — инструменты** — рутина автоматизируется скриптами и скиллами; улучшаем инструменты, когда это окупается для команды.
-3. **Код — маленькими кусками, тесты — до кода** — модули ≤1000 строк с явными связями, оценка влияния перед правкой, только точечные правки, горячие части выносятся, комментарии на русском, red → green.
-4. **Документация всегда актуальна** — README, цели и `company/state.md` обновляются в момент изменения; новая сессия начинает с чтения состояния, а не с раскопок.
-5. **Установки — только с согласия** — глобальные тулы (uv, graphify), скиллы, плагины и MCP-серверы ставятся после оффера (что, зачем, команда, что при отказе) и подтверждения пользователя; отказ — фолбэк без переспрашиваний.
-6. **Время фаундера — бюджет №1** — неблокирующие вопросы копятся и решаются пакетом на планёрке (≤5 решений с рекомендациями); блокирующие — сразу.
-7. **OKR-слой** — цели в `company/okr.md`, эпики привязаны к Key Results, отчёты меряют KR, а не «сделано задач».
-8. **Наружу — только с одобрения** — публикации, письма, траты денег агенты не делают сами, пока фаундер явно не делегировал конкретный канал.
-9. **Unit-экономика и прозрачность** — каждый оффер несёт «стоимость vs ценность», отчёты сверяют факт с оценкой и объясняют «почему так решили».
+## Comparison
 
-Регламент профессионально-нейтрален: конвейер одинаково ведёт фичи программиста и макеты дизайнера (спека = бриф, DoD = команда, сценарий или визуальная приёмка).
+| Project family | Main strength | Office difference |
+|---|---|---|
+| Paperclip-style context tools | Fast prompt/context capture | Office adds issue-first execution and verifier acceptance |
+| `ccteams` / team harnesses | Multiple specialized agents | Office adds department charters, rituals, and business ownership |
+| `obra/superpowers` | Strong engineering disciplines | Office imports the small-skill discipline and adds company operations |
+| `mattpocock/skills` | Memorable compact skills | Office adapts the compact-skill pattern with MIT attribution and an operating pipeline |
+| Skills marketplaces / `skills.sh` / Find Skills CLI | Broad discovery | Office is intentionally curated; new skills are hired only for a concrete use case |
 
-## Установка
+## Install
 
-Как плагин (рекомендуется — обновления через `/plugin`):
+Use one install path per CLI to avoid duplicate skills.
 
-```
-/plugin marketplace add VladPatr96/office
-/plugin install office@office
-```
+| Target | Command |
+|---|---|
+| Claude Code plugin | `/plugin marketplace add VladPatr96/office` then `/plugin install office@office` |
+| Codex user skills | `./install.ps1 -Target codex` or `./install.sh codex` |
+| Claude user skills | `./install.ps1 -Target claude` or `./install.sh claude` |
+| OpenCode-style user skills | `./install.ps1 -Target opencode` or `./install.sh opencode` |
+| Generic project agents | Copy or symlink `AGENTS.md` into the target project |
 
-Либо вручную, копией в пользовательские скиллы (удобно для разработки самого скилла):
+Distribution artifacts are generated from canonical `skills/`:
 
 ```powershell
-git clone https://github.com/VladPatr96/office
-cd office
-Get-ChildItem skills -Directory | ForEach-Object { Copy-Item -Recurse -Force $_.FullName "$env:USERPROFILE/.claude/skills/$($_.Name)" }
+./scripts/sync-layouts.ps1
 ```
 
-Ставьте одним способом, не обоими сразу — иначе скилл задвоится. После установки доступен во всех проектах как `/office`.
+```bash
+./scripts/sync-layouts.sh
+```
 
-Опциональные зависимости: [gh CLI](https://cli.github.com) (обязателен для конвейера), `uv` + graphify (`uv tool install graphifyy`), плагин Codex (`/plugin marketplace add openai/codex-plugin-cc`).
+## Repository Layout
 
-## Структура репозитория
+| Path | Purpose |
+|---|---|
+| `skills/` | Canonical English skills; each `SKILL.md` should stay <=50 lines |
+| `skills/office/templates/` | Company templates, blueprints, agent charters, and issue/spec forms |
+| `ru/` | Russian mirror of README, docs, and skill docs |
+| `docs/` | Method, ADRs, distribution notes, traceability |
+| `.claude-plugin/`, `.codex-plugin/` | Plugin manifests |
+| `.claude/`, `.codex/`, `.gemini/`, `.opencode/` | Generated or compatibility layouts |
+| `scripts/` | Layout sync scripts |
 
-| Путь | Что это |
-|------|---------|
-| `.claude-plugin/` | Манифесты плагина и маркетплейса (Claude Code); `.codex-plugin/` — то же для Codex CLI |
-| `skills/office/SKILL.md` | Регламент-роутер (источник правды, худеет по мере выноса кирпичей) |
-| `skills/planerka`, `skills/weak-dispatch`, `skills/writing-specs`, `skills/solve` (вход разовых задач), `skills/verifying` (дисциплина приёмки) | **Кирпичи** — маленькие скиллы «одна задача» (философия mattpocock/skills): команды для пользователя + дисциплины для моделей; карта и очередь выноса — `docs/BRICKS.md` |
-| `skills/office/templates/` | Шаблоны: спека issue, чартер отдела, карта компании, живой статус (state.md), OKR, планёрка, консилиум, ритуалы (weekly + месячный business review), промт-пак ядра (слот-формат Anthropic prompt library), агенты, блок для CLAUDE.md с правилами кода |
-| `skills/office/templates/blueprints/` | Готовые оргпроекты по типу бизнеса: media, saas, creator, agency, generic — отделы, промт-паки, OKR-заготовки, гейты этапов, первые задачи |
-| `skills/office/registry.md` | Реестр проверенных скиллов для «найма» + как искать новые |
+## Model Routing
 
-## Роли моделей
+Office routes by capability class, never by remembered model names:
 
-| Роль | Модель |
-|------|--------|
-| Оркестратор (CEO) | сессионная (Fable / Opus) |
-| deep-reasoner | Opus |
-| исполнители, verifier | Sonnet |
-| скауты-чтецы | Haiku |
-| второе мнение | Codex (`/codex:rescue`) |
+| Class | Use |
+|---|---|
+| `frontier` | hard architecture, ambiguous product choices, high-stakes synthesis |
+| `everyday` | normal implementation, verification, documentation |
+| `cheap` | recon, repetitive edits, weak-dispatch tasks |
+| `huge-context` | large codebase/document sweeps when retrieval is insufficient |
 
-## Лицензия
+Resolve concrete model names from the active tool at runtime.
 
-[MIT](LICENSE)
+## License And Attribution
+
+MIT. The compact-skill style is adapted with attribution to Matt Pocock's `skills` project and related small-skill practices; Office text and procedures are original.

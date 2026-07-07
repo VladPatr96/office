@@ -1,0 +1,2 @@
+description = "Use when the user says \"/casting\" or a task needs a missing department, agent, tool, or skill before work can be dispatched safely."
+prompt = "Use the Office skill at ../../skills/casting/SKILL.md. Load it before responding and follow its procedure."

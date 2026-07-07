@@ -1,0 +1,2 @@
+description = "Use when a request is vague, overloaded, strategic, or mixing goals, constraints, and implementation ideas before a spec can be written."
+prompt = "Use the Office skill at ../../skills/frame/SKILL.md. Load it before responding and follow its procedure."

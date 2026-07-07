@@ -1,0 +1,2 @@
+description = "Use when the user says \"/planerka\", asks what is waiting, starts a session in a repo with `company/state.md`, or needs founder decisions batched instead of asked one by one."
+prompt = "Use the Office skill at ../../skills/planerka/SKILL.md. Load it before responding and follow its procedure."

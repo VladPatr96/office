@@ -1,0 +1,2 @@
+description = "Use when the user says \"/solve\" or gives a one-off task that should be completed without standing company bootstrap, GitHub workflow, departments, or rituals."
+prompt = "Use the Office skill at ../../skills/solve/SKILL.md. Load it before responding and follow its procedure."

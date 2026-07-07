@@ -1,34 +1,30 @@
-# Карта кирпичей office
+# Brick Map
 
-Философия (по mattpocock/skills, 155k★): маленькие композируемые скиллы, один кирпич = одна задача. Два сорта: **команды** (вызывает пользователь — оркестрация) и **дисциплины** (модель включает сама, когда уместно). SKILL.md — тонкий роутер: когда какой кирпич брать. Компания = карта кирпичей по стадиям жизненного цикла проекта.
+Office is built from compact bricks: one skill, one job, one trigger surface. The router skill points to bricks; the bricks carry the discipline.
 
-## Стадии и кирпичи
+## Standard
 
-| Стадия | Кирпичи-команды (пользователь) | Кирпичи-дисциплины (модель) | Статус |
-|--------|-------------------------------|------------------------------|--------|
-| **Вход: разовая задача** | /solve (S/M/L triage, файл-спека `.office/tasks/`, границы возможного) | verifying | ✅ v0.6.0 |
-| **Идея / выравнивание** | /company-start (Intake+bootstrap), grill-me (уже есть у пользователя) | blueprint-подбор | в монолите |
-| **Оргпроект** | /hire (штатное интервью, офферы) | — | в монолите |
-| **Производство** | /to-spec (задача → спека-issue) | **writing-specs** ✅, **weak-dispatch** ✅, tdd-gate, verifying | первые вынесены |
-| **Решения** | — | consilium | в монолите (templates/consilium.md) |
-| **Управление** | **/planerka** ✅, /company-status | — | вынесен |
-| **Релиз / наружу** | /ship-gate (review-gate внешних действий) | — | план |
-| **Сопровождение** | /triage (инцидент → диагноз → issue) | diagnosing-bugs, metrics-watch | план — самая слабая стадия сейчас |
-| **Знания** | — | lessons-log (уроки в базу), context-vocab (словарь домена компании, паттерн CONTEXT.md) | план |
+- Canonical skill files are English and live in `skills/<name>/SKILL.md`.
+- Target length is <=50 lines. Move long examples, templates, and references next to the skill.
+- `description` says when to load the skill, not how to execute it.
+- Each skill must end in a concrete artifact, decision, or verification result.
+- Russian mirrors live in `ru/skills/<name>.md`.
 
-## Стандарт кирпича
+## Lifecycle
 
-- Один SKILL.md ≤ ~100 строк, одна задача, самодостаточен (не требует читать монолит).
-- Дисциплина обязана иметь: триггер в description (когда модель включает её сама), процедуру шагами, DoD/чек-лист выхода.
-- Команда обязана иметь: что спросит у пользователя, что сделает, какой артефакт оставит.
-- Кирпич может тянуть скрипт из `tools/` (правило трёх) и слот-промты.
-- Монолит SKILL.md после выноса секции заменяет её 2-3 строками со ссылкой на кирпич.
+| Stage | Command bricks | Discipline bricks |
+|---|---|---|
+| Intake | `solve`, `office`, `frame`, `grill-me` | `recon`, `premortem` |
+| Specification | `memo`, `writing-specs` | `weak-dispatch`, `reproduce` |
+| Execution | `next-step`, `loop`, `handoff` | `done-check` |
+| Acceptance | `verifying` | `lesson` |
+| Operations | `planerka`, `corporate`, `debrief`, `fire-drill`, `greenlight` | `unstuck` |
+| Hiring | `casting`, `design-stack`, `consilium` | `skill-craft` |
 
-## Порядок выноса (по ценности)
+## Backlog Policy
 
-1. ✅ planerka (команда), weak-dispatch (дисциплина), writing-specs (дисциплина) — v0.5.0
-2. ✅ /solve (команда) + verifying (дисциплина) — v0.6.0, вертикальный срез универсального входа + носитель-абстракция writing-specs/weak-dispatch (спека: issue #6)
-3. triage + diagnosing-bugs (v0.7 — стадия сопровождения, сейчас не покрыта вовсе)
-4. to-spec, hire, company-status (команды из монолита)
-5. consilium, lessons-log, context-vocab
-6. ship-gate, metrics-watch
+New bricks are created only from observed failure patterns. If a proposed skill does not prevent a repeated shortcut, keep it as a checklist in docs instead.
+
+## Attribution
+
+The compact, memorable skill style is adapted with MIT attribution to Matt Pocock's `skills` project and neighboring small-skill practices. Office keeps its own wording and issue-first operating model.

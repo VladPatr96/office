@@ -1,0 +1,2 @@
+description = "Use after a confirmed mistake, repeated verifier failure, incident, or surprising success that should change future agent behavior."
+prompt = "Use the Office skill at ../../skills/lesson/SKILL.md. Load it before responding and follow its procedure."

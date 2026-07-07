@@ -1,0 +1,2 @@
+description = "Use before fixing a bug when the failure is not yet reliably reproduced, or when a verifier needs a deterministic scenario instead of a vague report."
+prompt = "Use the Office skill at ../../skills/reproduce/SKILL.md. Load it before responding and follow its procedure."
