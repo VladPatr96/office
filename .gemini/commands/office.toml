@@ -1,2 +1,0 @@
-description = "Use when the user says \"/office\", asks to set up an agent company, or gives an ongoing product/business goal that needs repo bootstrap, issue-first execution, departments, rituals, verification, and lessons."
-prompt = "Use the Office skill at ../../skills/office/SKILL.md. Load it before responding and follow its procedure."
