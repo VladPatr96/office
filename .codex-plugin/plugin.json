@@ -1,6 +1,6 @@
 {
   "name": "office",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "Office — операционная система компании агентов: issue-first конвейер, отделы, найм, ритуалы, токен-экономика. Одна команда /office — от автоматизации рутины до компании под ключ",
   "author": {
     "name": "Vlad Patravaev",
@@ -26,7 +26,7 @@
   "interface": {
     "displayName": "Office",
     "shortDescription": "An agent company in any repository: pipeline, departments, hiring, rituals.",
-    "longDescription": "Deploys a full 'agent company' into any repository (including an empty one): repo bootstrap with GitHub Issues, self-sufficient specs in issue bodies, pointer dispatch to narrow department agents, fresh-context verification, use-case-driven agent hiring from a verified skill registry, consilium protocol for high-stakes decisions, living state docs, cross-project lessons, and strict token economy — the orchestrator thinks, cheap models work.",
+    "longDescription": "Runs Office in two tracks: a lightweight routine-automation crew without company/ bootstrap, or a full agent company in any repository. The full track creates GitHub Issues pipeline, self-sufficient specs in issue bodies, pointer dispatch to narrow department agents, fresh-context verification, use-case-driven hiring from a verified skill registry, greenlight gates for external actions, incident fire drills, living state docs, cross-project lessons, and strict token economy — the orchestrator thinks, cheap models work.",
     "developerName": "Vlad Patravaev",
     "category": "Development",
     "capabilities": [
@@ -38,6 +38,7 @@
     "termsOfServiceURL": "https://github.com/VladPatr96/office/blob/main/LICENSE",
     "brandColor": "#F59E0B",
     "defaultPrompt": [
+      "/office Цель: автоматизируй повторяющуюся рутину в этом репозитории",
       "/office Цель: разверни компанию в этом репозитории",
       "Настрой проект как компанию агентов",
       "Разверни компанию и заведи первый эпик"

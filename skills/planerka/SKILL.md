@@ -1,6 +1,6 @@
 ---
 name: planerka
-description: Use when user says "/planerka", "проведи планёрку", "что нового", "какие решения ждут", or at the START of any session in a repo with company/state.md (first ritual of the session per office) — планёрка фаундера, батч решений одной страницей.
+description: 'Use when user says "/planerka", "проведи планёрку", "что нового", "какие решения ждут", or at the START of any session in a repo with company/state.md (first ritual of the session per office) — планёрка фаундера, батч решений одной страницей.'
 ---
 
 # Планёрка

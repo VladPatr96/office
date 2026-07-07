@@ -19,6 +19,17 @@
 | personal-corp-skills: tg-bot-ops | плагин personal-corp-skills | Эксплуатация Telegram-ботов: health-чеки, вебхуки/поллинг, деплой, логи, инциденты | publishing/distribution, devops |
 | personal-corp-skills: ceo-council | плагин personal-corp-skills | Мульти-перспективный разбор стратегических решений | board |
 
+## Паттерны, адаптированные в office v1.0
+
+| Паттерн | Источник вдохновения | Где используется |
+|---|---|---|
+| Маленькие composable skills и CSO-description | mattpocock/skills, obra/superpowers | `docs/BRICKS.md`, все новые кирпичи |
+| Ready/blocked state machine и handoff-контекст | ccpm/issue-first workflows | `/memo`, `/fire-drill` |
+| Verification before completion, evidence required | superpowers verification практики | `verifying`, `templates/spec-issue.md` |
+| Systematic debugging: гипотезы до фиксов | diagnose/SRE-практики | `/fire-drill`, `diagnostician` |
+| FACT/HYPOTHESIS/UNKNOWN | product-data-audit / ops reports | `/corporate`, `/planerka` |
+| Unit-оценка найма и инструментов | personal-corp-skills project/manager практики | `/casting`, `/corporate` |
+
 ## Найденное на GitHub
 
 Проверено фетчем README/marketplace.json и/или `gh api` 2026-07-02. Звёзды — снимок на эту дату.

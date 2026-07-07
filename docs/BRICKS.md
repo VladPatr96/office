@@ -7,13 +7,14 @@
 | Стадия | Кирпичи-команды (пользователь) | Кирпичи-дисциплины (модель) | Статус |
 |--------|-------------------------------|------------------------------|--------|
 | **Вход: разовая задача** | /solve (S/M/L triage, файл-спека `.office/tasks/`, границы возможного) | verifying | ✅ v0.6.0 |
-| **Идея / выравнивание** | /company-start (Intake+bootstrap), grill-me (уже есть у пользователя) | blueprint-подбор | в монолите |
-| **Оргпроект** | /hire (штатное интервью, офферы) | — | в монолите |
-| **Производство** | /to-spec (задача → спека-issue) | **writing-specs** ✅, **weak-dispatch** ✅, tdd-gate, verifying | первые вынесены |
+| **Вход: постоянный процесс** | **/office** ✅ (трек рутина / трек компания), grill-me | blueprint-подбор | ✅ v1.0.0 |
+| **Оргпроект** | **/casting** ✅ (найм/инструменты/офферы) | — | ✅ v1.0.0 |
+| **Производство** | **/memo** ✅ (задача → спека-issue) | **writing-specs** ✅, **weak-dispatch** ✅, verifying | ✅ v1.0.0 |
 | **Решения** | — | consilium | в монолите (templates/consilium.md) |
-| **Управление** | **/planerka** ✅, /company-status | — | вынесен |
-| **Релиз / наружу** | /ship-gate (review-gate внешних действий) | — | план |
-| **Сопровождение** | /triage (инцидент → диагноз → issue) | diagnosing-bugs, metrics-watch | план — самая слабая стадия сейчас |
+| **Управление** | **/planerka** ✅, **/office** ✅ (статус), **/corporate** ✅ | — | ✅ v1.0.0 |
+| **Релиз / наружу** | **/greenlight** ✅ | — | ✅ v1.0.0 |
+| **Сопровождение** | **/fire-drill** ✅ (инцидент → доказательства → гипотезы → action gate) | diagnosing-bugs, metrics-watch | ✅ v1.0.0 |
+| **Обучение процесса** | **/debrief** ✅ | lessons-log, context-vocab | ✅ v1.0.0 |
 | **Знания** | — | lessons-log (уроки в базу), context-vocab (словарь домена компании, паттерн CONTEXT.md) | план |
 
 ## Стандарт кирпича
@@ -28,7 +29,6 @@
 
 1. ✅ planerka (команда), weak-dispatch (дисциплина), writing-specs (дисциплина) — v0.5.0
 2. ✅ /solve (команда) + verifying (дисциплина) — v0.6.0, вертикальный срез универсального входа + носитель-абстракция writing-specs/weak-dispatch (спека: issue #6)
-3. triage + diagnosing-bugs (v0.7 — стадия сопровождения, сейчас не покрыта вовсе)
-4. to-spec, hire, company-status (команды из монолита)
-5. consilium, lessons-log, context-vocab
-6. ship-gate, metrics-watch
+3. ✅ /memo, /casting, /fire-drill, /greenlight, /debrief, /corporate — v1.0.0, командный словарь Office
+4. consilium, lessons-log, context-vocab
+5. metrics-watch и детерминированные status-скрипты для `/office`

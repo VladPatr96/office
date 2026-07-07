@@ -1,6 +1,6 @@
 ---
 name: solve
-description: Use when user says "/solve", "реши задачу", or hands a one-off task in any domain that doesn't need a standing company — универсальный вход: triage S/M/L, файл-спека, конвейер с верификацией; для постоянной работы — /office.
+description: 'Use when user says "/solve", "реши задачу", or hands a one-off task in any domain that doesn''t need a standing company — универсальный вход: triage S/M/L, файл-спека, конвейер с верификацией; для постоянной работы — /office.'
 ---
 
 # Solve — универсальный вход для разовой задачи

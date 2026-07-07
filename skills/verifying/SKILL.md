@@ -1,11 +1,11 @@
 ---
 name: verifying
-description: Use WHENEVER accepting completed work from an executor (office issue pipeline or /solve file spec), or when deciding what to do after a failed verification — дисциплина приёмки: верификатор со свежим контекстом возвращает факт, не мнение.
+description: 'Use WHENEVER accepting completed work from an executor (office issue pipeline or /solve file spec), or when deciding what to do after a failed verification — дисциплина приёмки: спек-комплаенс -> качество/риски -> evidence, severity, false-positive filter.'
 ---
 
 # Verifying: приёмка возвращает факт, не мнение
 
-Приёмка — отдельным верификатором (qa, чистый контекст): исполняет команду/сценарий из DoD, возвращает факт.
+Приёмка — отдельным верификатором (qa, чистый контекст): сначала проверяет соответствие спеке, затем качество/риски, исполняет команду/сценарий из DoD и возвращает факт.
 
 ## Принцип
 
@@ -15,6 +15,13 @@ description: Use WHENEVER accepting completed work from an executor (office issu
 - результат исполнителя (дифф, отчёт).
 
 Он исполняет команду/сценарий, прописанный в DoD спеки, и возвращает **факт** — «команда X вернула Y» — а не оценку вроде «выглядит нормально» или «должно работать». Ничего не додумывает и не читает сверх спеки+результата.
+
+## Два прохода
+
+1. **Spec compliance.** Проверить только соответствие спеке: все шаги, границы, metadata, инструмент, docs, evidence. Если здесь FAIL — качество не обсуждать, вернуть точный список расхождений.
+2. **Quality and risk.** После compliance PASS проверить явные риски: регрессии, недостающие тесты, небезопасные внешние действия, stale docs/graph. Findings писать с severity: `blocker`, `major`, `minor`, `note`.
+
+Перед FAIL по quality задай фильтр ложного срабатывания: есть ли доказательство из кода/команды/спеки, или это предположение? Нет доказательства — `note` или вопрос, не blocker.
 
 ## Лестница провалов
 
@@ -28,6 +35,9 @@ description: Use WHENEVER accepting completed work from an executor (office issu
 ## Чек-лист выхода
 
 - [ ] Вердикт содержит команду и её фактический вывод (не пересказ, не оценку).
+- [ ] Spec compliance проверен до quality.
+- [ ] Каждая находка имеет severity и evidence.
+- [ ] Нет blocker/major без доказательства.
 - [ ] Провал → точечный список конкретных расхождений со спекой, а не общее «не работает».
 - [ ] Спека требовала обновить доки → проверено отдельно, зафиксировано в вердикте.
 - [ ] Носитель определён верно: issue → лейбл `status:*`; файл `.office/tasks/<slug>.md` → поле `status:` во frontmatter.
