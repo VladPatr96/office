@@ -33,6 +33,8 @@ Use this registry when "hiring" a department, agent, tool, or skill. Prefer veri
 | GitHub issue manager skills | installed plugin when available | Issue tracking and session context | board | optional |
 | `notebooklm-mcp-cli` | candidate | Grounded queries over a knowledge base without burning agent context | research/docs | verify before install |
 | `ccteams` | candidate | Team-style Claude/Codex agent coordination and Fable legacy workflows | engineering/ops | verify before install |
+| Open Design | https://open-design.ai | Local-first brand-aware design agent; engine = already-hired CLI agents | design | offer via `templates/design-stack.md`; desktop app (Windows/Mac) or from source (Node 24 + pnpm) |
+| `stitch-mcp` | https://github.com/davideast/stitch-mcp | Google Stitch UI generation via MCP proxy (`build_site`, `get_screen_code`, `get_screen_image`) | design | offer via `templates/design-stack.md`; `npx @_davideast/stitch-mcp init` + MCP config; requires GCP project with billing ENABLED |
 
 ## Design Stack Candidates
 

@@ -4,6 +4,6 @@
 
 Правила: работа issue-first, спека до исполнения, исполнитель не проверяет сам себя, модели маршрутизируются классами, установки/публикации/траты только после явного одобрения.
 
-Поток: intake через `frame/recon/grill-me`, bootstrap компании, `writing-specs`, dispatch, `verifying`, `done-check`, затем `lesson` и `planerka` при необходимости.
+Поток: intake через `frame/recon/grill-me`, bootstrap компании, `writing-specs`, dispatch, `verifying`, `done-check`, затем `lesson` и `planerka` при необходимости. Если задача классифицирована как design — предложить контракты из `templates/design-stack.md` ДО поиска новых инструментов.
 
 Выход: состояние конвейера, изменённые артефакты, evidence проверки, риски и точный следующий шаг.
