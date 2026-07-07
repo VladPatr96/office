@@ -8,9 +8,11 @@ Office uses `skills/` as the single source of truth. Generated layouts are compa
 |---|---|---|
 | Claude Code | `.claude/skills/<skill>/SKILL.md` | Plugin install remains preferred |
 | Codex | `.codex/skills/<skill>/SKILL.md` | User-skill compatible layout |
-| Gemini | `.gemini/commands/<skill>.toml` | Command wrappers that point to canonical skills |
+| Antigravity CLI (agy) | uses the Claude plugin layout as-is | install: `agy plugin install office@office` (marketplace form) or `agy plugin import claude`; verify: `agy plugin validate ./.claude-plugin` |
 | OpenCode | `.opencode/skills/<skill>/SKILL.md` | Generic skill directory layout |
 | Generic agents | `AGENTS.md` | Repository-level operating rules |
+
+Antigravity CLI commands snapped from agy 0.x help, 2026-07-07; re-verify with `agy help plugin`.
 
 ## Regenerate
 

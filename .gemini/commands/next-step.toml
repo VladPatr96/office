@@ -1,2 +1,0 @@
-description = "Use when the user asks what to do next, the task has too many possible directions, or progress requires choosing one bounded action."
-prompt = "Use the Office skill at ../../skills/next-step/SKILL.md. Load it before responding and follow its procedure."

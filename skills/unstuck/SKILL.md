@@ -1,23 +1,25 @@
 ---
 name: unstuck
-description: Use when a task has looped, failed the same check twice, produced contradictory explanations, or the agent says it is stuck without a concrete next experiment.
+description: Use when the same error survives 3 different attempts, when retrying variations of one idea, going in circles, or stuck; escape ladder for dead ends that trades guesses for evidence.
 ---
 
 # Unstuck
 
-Break loops by replacing guesses with a narrow diagnosis.
+The fourth retry is forbidden — climb the ladder instead: each rung trades another guess for new evidence.
 
-## Procedure
+## Ladder
 
-1. State the stuck symptom in one sentence.
-2. List the last two attempted moves and their evidence.
-3. Separate facts from interpretations.
-4. Pick one hypothesis to test next; reject broad rewrites.
-5. Define the smallest experiment and expected signal.
-6. If the experiment fails, write or update a `lesson` candidate.
+Climb in strict order; stop at the first rung that unblocks you, and leave a one-line fact for every rung climbed.
 
-## Output
+1. Reread the exact error text slowly, in full, including the tail. Half of all dead ends end here: the answer was written in a message "already read".
+2. Switch layers. Ran commands — sit down and read the code; read the code — look at real data; looked at data — check the environment (versions, PATH, permissions).
+3. Search project knowledge: lessons.md, closed issues (`gh search issues`), project docs. Much has been solved before.
+4. Ask a frontier-class model with evidence: what you did, what you expected, what you got, what you already ruled out. Hand over evidence, not "it doesn't work, help".
+5. Report to the user: what you tried, what you ruled out, where you stand, what the forks are. This is reconnaissance output, not failure; failure is an hour of silence followed by "couldn't do it".
 
-Return: symptom, known facts, rejected instincts, next experiment, stop condition.
+## Exit checklist
 
-If the task lacks a reproducible failure, switch to `reproduce` before fixing.
+- [ ] No fourth retry of the same kind happened; the ladder was climbed instead.
+- [ ] Every rung climbed left a one-line fact: what it proved or ruled out.
+- [ ] The model prompt (rung 4), if used, contained evidence: did / expected / got / ruled out.
+- [ ] The report (rung 5), if reached, lists ruled-out versions, not only the symptom.

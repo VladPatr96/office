@@ -1,2 +1,0 @@
-description = "Use when a task has looped, failed the same check twice, produced contradictory explanations, or the agent says it is stuck without a concrete next experiment."
-prompt = "Use the Office skill at ../../skills/unstuck/SKILL.md. Load it before responding and follow its procedure."
