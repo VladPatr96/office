@@ -17,3 +17,14 @@ The orchestrator plans, writes specs, resolves tradeoffs, and synthesizes. Narro
 Use `frontier` for high-stakes decisions, `everyday` for normal execution and verification, `cheap` for recon and atomic weak-dispatch work, and `huge-context` only when retrieval plus targeted reads is not enough.
 
 If context is low or the task crosses CLIs, create a handoff: goal, current state, changed files, commands run, open risks, exact next step.
+
+<!-- hq:start -->
+## Штаб hq
+
+Задачи, решения и память по этому проекту живут в штабе `D:/projects/my_projects/hq`, карточка — `projects/skill-flash/README.md`.
+
+- **Что в работе** — раздел «Открытые задачи» в карточке и файлы `projects/skill-flash/tasks/<номер>-<slug>.md`. Это зеркало GitHub Issues: руками не правь, оно пересобирается.
+- **Что уже решали** — «Память решений» в карточке и разборы в `projects/skill-flash/memory/`. Упёрся или задача похожа на прошлую — сперва посмотри туда, а не решай заново.
+- **Задача** — один GitHub issue с меткой `task` и проверяемым условием готовности. Заводит его человек командой `/zadacha`; сам issue не создавай.
+- **Состояние** — метки `status:todo`, `status:in-progress`, `status:acceptance`; Done — закрытый issue. В `Done` переводит только человек.
+<!-- hq:end -->
